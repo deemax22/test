@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        #map {
+            width: 1346px;
+            height: 849px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/INTERMODAL_0.js"></script>
+        <script src="data/STATIONS_1.js"></script>
+        <script src="data/PACKAGE3_JOIN_2.js"></script>
+        <script src="data/INTERMODAL_3.js"></script>
+        <script src="data/intermodal_4.js"></script>
+        <script src="data/stations_5.js"></script>
+        <script src="data/STATIONS_6.js"></script>
+        <script src="data/lines_7.js"></script>
+        <script src="data/ACCESS_8.js"></script>
+        <script src="data/lp0807_9.js"></script>
+        <script src="data/PACKAGE2_JOIN_10.js"></script>
+        <script src="data/P1_INTERMODAL_11.js"></script>
+        <script src="data/IIROW_LOTS_POLY_12.js"></script>
+        <script src="data/STATION_LOTS_POLY_13.js"></script>
+        <script src="data/PACKAGE1_BROW_FOR_JOIN_14.js"></script>
+        <script src="data/P1MERGED_15.js"></script>
+        <script src="data/PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16.js"></script>
+        <script src="data/ACQUIREDBROWDRS_17.js"></script>
+        <script src="data/texts_18.js"></script>
+        <script src="data/polylines_19.js"></script>
+        <script src="data/SG_TELCOS_PTT_JOIN_20.js"></script>
+        <script src="data/PTTLINE_21.js"></script>
+        <script src="data/PTT_22.js"></script>
+        <script src="data/SG_TELCOS_SKYCABLE_JOIN_23.js"></script>
+        <script src="data/LINE_24.js"></script>
+        <script src="data/SKY_25.js"></script>
+        <script src="data/SG_TELCOS_GLOBE_JOIN_26.js"></script>
+        <script src="data/GLOBE_27.js"></script>
+        <script src="data/EASTERN_28.js"></script>
+        <script src="data/SG_TELCOS_EASTERN_JOIN_29.js"></script>
+        <script>
+        var m2px = 1;
+        function newM2px() {
+            var centerLatLng = map.getCenter();
+            var pointC = map.latLngToContainerPoint(centerLatLng);
+            var pointX = [pointC.x + 100, pointC.y];
+
+            var latLngC = map.containerPointToLatLng(pointC);
+            var latLngX = map.containerPointToLatLng(pointX);
+
+            var distanceX = latLngC.distanceTo(latLngX)/100;
+
+            reciprocal = 1 / distanceX;
+            m2px = reciprocal;
+        }
+        function geoStyle(m) {
+            return Math.ceil(m * m2px);
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[14.477133428228314,120.965767305612],[14.50781217364232,121.01531794683628]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_INTERMODAL_0(feature, layer) {
+        }
+
+        function style_INTERMODAL_0_0() {
+            return {
+                pane: 'pane_INTERMODAL_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,201,167,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_INTERMODAL_0');
+        map.getPane('pane_INTERMODAL_0').style.zIndex = 400;
+        map.getPane('pane_INTERMODAL_0').style['mix-blend-mode'] = 'normal';
+        var layer_INTERMODAL_0 = new L.geoJson(json_INTERMODAL_0, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_INTERMODAL_0',
+            layerName: 'layer_INTERMODAL_0',
+            pane: 'pane_INTERMODAL_0',
+            onEachFeature: pop_INTERMODAL_0,
+            style: style_INTERMODAL_0_0,
+        });
+        bounds_group.addLayer(layer_INTERMODAL_0);
+        map.addLayer(layer_INTERMODAL_0);
+        function pop_STATIONS_1(feature, layer) {
+        }
+
+        function style_STATIONS_1_0() {
+            return {
+                pane: 'pane_STATIONS_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(165,248,206,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_STATIONS_1');
+        map.getPane('pane_STATIONS_1').style.zIndex = 401;
+        map.getPane('pane_STATIONS_1').style['mix-blend-mode'] = 'normal';
+        var layer_STATIONS_1 = new L.geoJson(json_STATIONS_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_STATIONS_1',
+            layerName: 'layer_STATIONS_1',
+            pane: 'pane_STATIONS_1',
+            onEachFeature: pop_STATIONS_1,
+            style: style_STATIONS_1_0,
+        });
+        bounds_group.addLayer(layer_STATIONS_1);
+        map.addLayer(layer_STATIONS_1);
+        function pop_PACKAGE3_JOIN_2(feature, layer) {
+        }
+
+        function style_PACKAGE3_JOIN_2_0() {
+            return {
+                pane: 'pane_PACKAGE3_JOIN_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,253,151,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PACKAGE3_JOIN_2');
+        map.getPane('pane_PACKAGE3_JOIN_2').style.zIndex = 402;
+        map.getPane('pane_PACKAGE3_JOIN_2').style['mix-blend-mode'] = 'normal';
+        var layer_PACKAGE3_JOIN_2 = new L.geoJson(json_PACKAGE3_JOIN_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PACKAGE3_JOIN_2',
+            layerName: 'layer_PACKAGE3_JOIN_2',
+            pane: 'pane_PACKAGE3_JOIN_2',
+            onEachFeature: pop_PACKAGE3_JOIN_2,
+            style: style_PACKAGE3_JOIN_2_0,
+        });
+        bounds_group.addLayer(layer_PACKAGE3_JOIN_2);
+        map.addLayer(layer_PACKAGE3_JOIN_2);
+        function pop_INTERMODAL_3(feature, layer) {
+        }
+
+        function style_INTERMODAL_3_0() {
+            return {
+                pane: 'pane_INTERMODAL_3',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,201,167,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_INTERMODAL_3');
+        map.getPane('pane_INTERMODAL_3').style.zIndex = 403;
+        map.getPane('pane_INTERMODAL_3').style['mix-blend-mode'] = 'normal';
+        var layer_INTERMODAL_3 = new L.geoJson(json_INTERMODAL_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_INTERMODAL_3',
+            layerName: 'layer_INTERMODAL_3',
+            pane: 'pane_INTERMODAL_3',
+            onEachFeature: pop_INTERMODAL_3,
+            style: style_INTERMODAL_3_0,
+        });
+        bounds_group.addLayer(layer_INTERMODAL_3);
+        map.addLayer(layer_INTERMODAL_3);
+        function pop_intermodal_4(feature, layer) {
+        }
+
+        function style_intermodal_4_0() {
+            return {
+                pane: 'pane_intermodal_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: geoStyle(1.0),
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_intermodal_4_1() {
+            return {
+                pane: 'pane_intermodal_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_intermodal_4');
+        map.getPane('pane_intermodal_4').style.zIndex = 404;
+        map.getPane('pane_intermodal_4').style['mix-blend-mode'] = 'normal';
+        var layer_intermodal_4 = new L.geoJson.multiStyle(json_intermodal_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_intermodal_4',
+            layerName: 'layer_intermodal_4',
+            pane: 'pane_intermodal_4',
+            onEachFeature: pop_intermodal_4,
+            styles: [style_intermodal_4_0,style_intermodal_4_1,]
+        });
+        bounds_group.addLayer(layer_intermodal_4);
+        map.addLayer(layer_intermodal_4);
+        function pop_stations_5(feature, layer) {
+        }
+
+        function style_stations_5_0() {
+            return {
+                pane: 'pane_stations_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: geoStyle(1.0),
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_stations_5_1() {
+            return {
+                pane: 'pane_stations_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_stations_5');
+        map.getPane('pane_stations_5').style.zIndex = 405;
+        map.getPane('pane_stations_5').style['mix-blend-mode'] = 'normal';
+        var layer_stations_5 = new L.geoJson.multiStyle(json_stations_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_stations_5',
+            layerName: 'layer_stations_5',
+            pane: 'pane_stations_5',
+            onEachFeature: pop_stations_5,
+            styles: [style_stations_5_0,style_stations_5_1,]
+        });
+        bounds_group.addLayer(layer_stations_5);
+        map.addLayer(layer_stations_5);
+        function pop_STATIONS_6(feature, layer) {
+        }
+
+        function style_STATIONS_6_0() {
+            return {
+                pane: 'pane_STATIONS_6',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(165,248,206,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_STATIONS_6');
+        map.getPane('pane_STATIONS_6').style.zIndex = 406;
+        map.getPane('pane_STATIONS_6').style['mix-blend-mode'] = 'normal';
+        var layer_STATIONS_6 = new L.geoJson(json_STATIONS_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_STATIONS_6',
+            layerName: 'layer_STATIONS_6',
+            pane: 'pane_STATIONS_6',
+            onEachFeature: pop_STATIONS_6,
+            style: style_STATIONS_6_0,
+        });
+        bounds_group.addLayer(layer_STATIONS_6);
+        map.addLayer(layer_STATIONS_6);
+        function pop_lines_7(feature, layer) {
+        }
+
+        function style_lines_7_0() {
+            return {
+                pane: 'pane_lines_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_lines_7');
+        map.getPane('pane_lines_7').style.zIndex = 407;
+        map.getPane('pane_lines_7').style['mix-blend-mode'] = 'normal';
+        var layer_lines_7 = new L.geoJson(json_lines_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_lines_7',
+            layerName: 'layer_lines_7',
+            pane: 'pane_lines_7',
+            onEachFeature: pop_lines_7,
+            style: style_lines_7_0,
+        });
+        bounds_group.addLayer(layer_lines_7);
+        map.addLayer(layer_lines_7);
+        function pop_ACCESS_8(feature, layer) {
+        }
+
+        function style_ACCESS_8_0() {
+            return {
+                pane: 'pane_ACCESS_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(238,105,105,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ACCESS_8');
+        map.getPane('pane_ACCESS_8').style.zIndex = 408;
+        map.getPane('pane_ACCESS_8').style['mix-blend-mode'] = 'normal';
+        var layer_ACCESS_8 = new L.geoJson(json_ACCESS_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ACCESS_8',
+            layerName: 'layer_ACCESS_8',
+            pane: 'pane_ACCESS_8',
+            onEachFeature: pop_ACCESS_8,
+            style: style_ACCESS_8_0,
+        });
+        bounds_group.addLayer(layer_ACCESS_8);
+        map.addLayer(layer_ACCESS_8);
+        function pop_lp0807_9(feature, layer) {
+        }
+
+        function style_lp0807_9_0() {
+            return {
+                pane: 'pane_lp0807_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: geoStyle(1.0),
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_lp0807_9_1() {
+            return {
+                pane: 'pane_lp0807_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_lp0807_9');
+        map.getPane('pane_lp0807_9').style.zIndex = 409;
+        map.getPane('pane_lp0807_9').style['mix-blend-mode'] = 'normal';
+        var layer_lp0807_9 = new L.geoJson.multiStyle(json_lp0807_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_lp0807_9',
+            layerName: 'layer_lp0807_9',
+            pane: 'pane_lp0807_9',
+            onEachFeature: pop_lp0807_9,
+            styles: [style_lp0807_9_0,style_lp0807_9_1,]
+        });
+        bounds_group.addLayer(layer_lp0807_9);
+        map.addLayer(layer_lp0807_9);
+        function pop_PACKAGE2_JOIN_10(feature, layer) {
+        }
+
+        function style_PACKAGE2_JOIN_10_0() {
+            return {
+                pane: 'pane_PACKAGE2_JOIN_10',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,253,151,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PACKAGE2_JOIN_10');
+        map.getPane('pane_PACKAGE2_JOIN_10').style.zIndex = 410;
+        map.getPane('pane_PACKAGE2_JOIN_10').style['mix-blend-mode'] = 'normal';
+        var layer_PACKAGE2_JOIN_10 = new L.geoJson(json_PACKAGE2_JOIN_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PACKAGE2_JOIN_10',
+            layerName: 'layer_PACKAGE2_JOIN_10',
+            pane: 'pane_PACKAGE2_JOIN_10',
+            onEachFeature: pop_PACKAGE2_JOIN_10,
+            style: style_PACKAGE2_JOIN_10_0,
+        });
+        bounds_group.addLayer(layer_PACKAGE2_JOIN_10);
+        map.addLayer(layer_PACKAGE2_JOIN_10);
+        function pop_P1_INTERMODAL_11(feature, layer) {
+        }
+
+        function style_P1_INTERMODAL_11_0() {
+            return {
+                pane: 'pane_P1_INTERMODAL_11',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,201,167,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_P1_INTERMODAL_11');
+        map.getPane('pane_P1_INTERMODAL_11').style.zIndex = 411;
+        map.getPane('pane_P1_INTERMODAL_11').style['mix-blend-mode'] = 'normal';
+        var layer_P1_INTERMODAL_11 = new L.geoJson(json_P1_INTERMODAL_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_P1_INTERMODAL_11',
+            layerName: 'layer_P1_INTERMODAL_11',
+            pane: 'pane_P1_INTERMODAL_11',
+            onEachFeature: pop_P1_INTERMODAL_11,
+            style: style_P1_INTERMODAL_11_0,
+        });
+        bounds_group.addLayer(layer_P1_INTERMODAL_11);
+        map.addLayer(layer_P1_INTERMODAL_11);
+        function pop_IIROW_LOTS_POLY_12(feature, layer) {
+        }
+
+        function style_IIROW_LOTS_POLY_12_0() {
+            return {
+                pane: 'pane_IIROW_LOTS_POLY_12',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(197,235,254,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_IIROW_LOTS_POLY_12');
+        map.getPane('pane_IIROW_LOTS_POLY_12').style.zIndex = 412;
+        map.getPane('pane_IIROW_LOTS_POLY_12').style['mix-blend-mode'] = 'normal';
+        var layer_IIROW_LOTS_POLY_12 = new L.geoJson(json_IIROW_LOTS_POLY_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_IIROW_LOTS_POLY_12',
+            layerName: 'layer_IIROW_LOTS_POLY_12',
+            pane: 'pane_IIROW_LOTS_POLY_12',
+            onEachFeature: pop_IIROW_LOTS_POLY_12,
+            style: style_IIROW_LOTS_POLY_12_0,
+        });
+        bounds_group.addLayer(layer_IIROW_LOTS_POLY_12);
+        map.addLayer(layer_IIROW_LOTS_POLY_12);
+        function pop_STATION_LOTS_POLY_13(feature, layer) {
+        }
+
+        function style_STATION_LOTS_POLY_13_0() {
+            return {
+                pane: 'pane_STATION_LOTS_POLY_13',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(165,248,206,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_STATION_LOTS_POLY_13');
+        map.getPane('pane_STATION_LOTS_POLY_13').style.zIndex = 413;
+        map.getPane('pane_STATION_LOTS_POLY_13').style['mix-blend-mode'] = 'normal';
+        var layer_STATION_LOTS_POLY_13 = new L.geoJson(json_STATION_LOTS_POLY_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_STATION_LOTS_POLY_13',
+            layerName: 'layer_STATION_LOTS_POLY_13',
+            pane: 'pane_STATION_LOTS_POLY_13',
+            onEachFeature: pop_STATION_LOTS_POLY_13,
+            style: style_STATION_LOTS_POLY_13_0,
+        });
+        bounds_group.addLayer(layer_STATION_LOTS_POLY_13);
+        map.addLayer(layer_STATION_LOTS_POLY_13);
+        function pop_PACKAGE1_BROW_FOR_JOIN_14(feature, layer) {
+        }
+
+        function style_PACKAGE1_BROW_FOR_JOIN_14_0() {
+            return {
+                pane: 'pane_PACKAGE1_BROW_FOR_JOIN_14',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(224,224,74,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PACKAGE1_BROW_FOR_JOIN_14');
+        map.getPane('pane_PACKAGE1_BROW_FOR_JOIN_14').style.zIndex = 414;
+        map.getPane('pane_PACKAGE1_BROW_FOR_JOIN_14').style['mix-blend-mode'] = 'normal';
+        var layer_PACKAGE1_BROW_FOR_JOIN_14 = new L.geoJson(json_PACKAGE1_BROW_FOR_JOIN_14, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PACKAGE1_BROW_FOR_JOIN_14',
+            layerName: 'layer_PACKAGE1_BROW_FOR_JOIN_14',
+            pane: 'pane_PACKAGE1_BROW_FOR_JOIN_14',
+            onEachFeature: pop_PACKAGE1_BROW_FOR_JOIN_14,
+            style: style_PACKAGE1_BROW_FOR_JOIN_14_0,
+        });
+        bounds_group.addLayer(layer_PACKAGE1_BROW_FOR_JOIN_14);
+        map.addLayer(layer_PACKAGE1_BROW_FOR_JOIN_14);
+        function pop_P1MERGED_15(feature, layer) {
+        }
+
+        function style_P1MERGED_15_0() {
+            return {
+                pane: 'pane_P1MERGED_15',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,253,151,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_P1MERGED_15');
+        map.getPane('pane_P1MERGED_15').style.zIndex = 415;
+        map.getPane('pane_P1MERGED_15').style['mix-blend-mode'] = 'normal';
+        var layer_P1MERGED_15 = new L.geoJson(json_P1MERGED_15, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_P1MERGED_15',
+            layerName: 'layer_P1MERGED_15',
+            pane: 'pane_P1MERGED_15',
+            onEachFeature: pop_P1MERGED_15,
+            style: style_P1MERGED_15_0,
+        });
+        bounds_group.addLayer(layer_P1MERGED_15);
+        map.addLayer(layer_P1MERGED_15);
+        function pop_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16(feature, layer) {
+        }
+
+        function style_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16_0() {
+            return {
+                pane: 'pane_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(251,154,153,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16');
+        map.getPane('pane_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16').style.zIndex = 416;
+        map.getPane('pane_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16').style['mix-blend-mode'] = 'normal';
+        var layer_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16 = new L.geoJson(json_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16',
+            layerName: 'layer_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16',
+            pane: 'pane_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16',
+            onEachFeature: pop_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16,
+            style: style_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16_0,
+        });
+        bounds_group.addLayer(layer_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16);
+        map.addLayer(layer_PACKAGE1_BROW_LOTS_POLY_CLASSIFIED7_16);
+        function pop_ACQUIREDBROWDRS_17(feature, layer) {
+        }
+
+        function style_ACQUIREDBROWDRS_17_0() {
+            return {
+                pane: 'pane_ACQUIREDBROWDRS_17',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ACQUIREDBROWDRS_17');
+        map.getPane('pane_ACQUIREDBROWDRS_17').style.zIndex = 417;
+        map.getPane('pane_ACQUIREDBROWDRS_17').style['mix-blend-mode'] = 'normal';
+        var layer_ACQUIREDBROWDRS_17 = new L.geoJson(json_ACQUIREDBROWDRS_17, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ACQUIREDBROWDRS_17',
+            layerName: 'layer_ACQUIREDBROWDRS_17',
+            pane: 'pane_ACQUIREDBROWDRS_17',
+            onEachFeature: pop_ACQUIREDBROWDRS_17,
+            style: style_ACQUIREDBROWDRS_17_0,
+        });
+        bounds_group.addLayer(layer_ACQUIREDBROWDRS_17);
+        map.addLayer(layer_ACQUIREDBROWDRS_17);
+        function pop_texts_18(feature, layer) {
+        }
+
+        function style_texts_18_0() {
+            return {
+                fill: false,
+                stroke: false,
+                interactive: false
+            }
+        }
+        map.createPane('pane_texts_18');
+        map.getPane('pane_texts_18').style.zIndex = 418;
+        map.getPane('pane_texts_18').style['mix-blend-mode'] = 'normal';
+        var layer_texts_18 = new L.geoJson(json_texts_18, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_texts_18',
+            layerName: 'layer_texts_18',
+            pane: 'pane_texts_18',
+            onEachFeature: pop_texts_18,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_texts_18_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_texts_18);
+        map.addLayer(layer_texts_18);
+        function pop_polylines_19(feature, layer) {
+        }
+
+        function style_polylines_19_0() {
+            return {
+                pane: 'pane_polylines_19',
+                opacity: 1,
+                color: 'rgba(219,30,42,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_polylines_19');
+        map.getPane('pane_polylines_19').style.zIndex = 419;
+        map.getPane('pane_polylines_19').style['mix-blend-mode'] = 'normal';
+        var layer_polylines_19 = new L.geoJson(json_polylines_19, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_polylines_19',
+            layerName: 'layer_polylines_19',
+            pane: 'pane_polylines_19',
+            onEachFeature: pop_polylines_19,
+            style: style_polylines_19_0,
+        });
+        bounds_group.addLayer(layer_polylines_19);
+        map.addLayer(layer_polylines_19);
+        function pop_PTTLINE_21(feature, layer) {
+        }
+
+        function style_PTTLINE_21_0() {
+            return {
+                pane: 'pane_PTTLINE_21',
+                opacity: 1,
+                color: 'rgba(255,165,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PTTLINE_21');
+        map.getPane('pane_PTTLINE_21').style.zIndex = 421;
+        map.getPane('pane_PTTLINE_21').style['mix-blend-mode'] = 'normal';
+        var layer_PTTLINE_21 = new L.geoJson(json_PTTLINE_21, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PTTLINE_21',
+            layerName: 'layer_PTTLINE_21',
+            pane: 'pane_PTTLINE_21',
+            onEachFeature: pop_PTTLINE_21,
+            style: style_PTTLINE_21_0,
+        });
+        bounds_group.addLayer(layer_PTTLINE_21);
+        map.addLayer(layer_PTTLINE_21);
+        function pop_PTT_22(feature, layer) {
+        }
+
+        function style_PTT_22_0() {
+            return {
+                pane: 'pane_PTT_22',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,165,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PTT_22');
+        map.getPane('pane_PTT_22').style.zIndex = 422;
+        map.getPane('pane_PTT_22').style['mix-blend-mode'] = 'normal';
+        var layer_PTT_22 = new L.geoJson(json_PTT_22, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PTT_22',
+            layerName: 'layer_PTT_22',
+            pane: 'pane_PTT_22',
+            onEachFeature: pop_PTT_22,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_PTT_22_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_PTT_22);
+        map.addLayer(layer_PTT_22);
+        function pop_LINE_24(feature, layer) {
+        }
+
+        function style_LINE_24_0() {
+            return {
+                pane: 'pane_LINE_24',
+                opacity: 1,
+                color: 'rgba(95,166,219,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LINE_24');
+        map.getPane('pane_LINE_24').style.zIndex = 424;
+        map.getPane('pane_LINE_24').style['mix-blend-mode'] = 'normal';
+        var layer_LINE_24 = new L.geoJson(json_LINE_24, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LINE_24',
+            layerName: 'layer_LINE_24',
+            pane: 'pane_LINE_24',
+            onEachFeature: pop_LINE_24,
+            style: style_LINE_24_0,
+        });
+        bounds_group.addLayer(layer_LINE_24);
+        map.addLayer(layer_LINE_24);
+        function pop_SKY_25(feature, layer) {
+        }
+
+        function style_SKY_25_0() {
+            return {
+                pane: 'pane_SKY_25',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SKY_25');
+        map.getPane('pane_SKY_25').style.zIndex = 425;
+        map.getPane('pane_SKY_25').style['mix-blend-mode'] = 'normal';
+        var layer_SKY_25 = new L.geoJson(json_SKY_25, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SKY_25',
+            layerName: 'layer_SKY_25',
+            pane: 'pane_SKY_25',
+            onEachFeature: pop_SKY_25,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_SKY_25_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_SKY_25);
+        map.addLayer(layer_SKY_25);
+        function pop_GLOBE_27(feature, layer) {
+        }
+
+        function style_GLOBE_27_0() {
+            return {
+                pane: 'pane_GLOBE_27',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,61,121,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GLOBE_27');
+        map.getPane('pane_GLOBE_27').style.zIndex = 427;
+        map.getPane('pane_GLOBE_27').style['mix-blend-mode'] = 'normal';
+        var layer_GLOBE_27 = new L.geoJson(json_GLOBE_27, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GLOBE_27',
+            layerName: 'layer_GLOBE_27',
+            pane: 'pane_GLOBE_27',
+            onEachFeature: pop_GLOBE_27,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_GLOBE_27_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_GLOBE_27);
+        map.addLayer(layer_GLOBE_27);
+        function pop_EASTERN_28(feature, layer) {
+        }
+
+        function style_EASTERN_28_0() {
+            return {
+                pane: 'pane_EASTERN_28',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(28,136,16,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_EASTERN_28');
+        map.getPane('pane_EASTERN_28').style.zIndex = 428;
+        map.getPane('pane_EASTERN_28').style['mix-blend-mode'] = 'normal';
+        var layer_EASTERN_28 = new L.geoJson(json_EASTERN_28, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_EASTERN_28',
+            layerName: 'layer_EASTERN_28',
+            pane: 'pane_EASTERN_28',
+            onEachFeature: pop_EASTERN_28,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_EASTERN_28_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_EASTERN_28);
+        map.addLayer(layer_EASTERN_28);
+        var layer_ESRITopo_30 = L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            opacity: 0.6,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRITopo_30;
+        map.addLayer(layer_ESRITopo_30);
+        setBounds();
+        var i = 0;
+        layer_texts_18.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['text'] !== null?String('<div style="color: #000000; font-size: 8pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['text']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_texts_18'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        newM2px();
+
+            layer_intermodal_4.setStyle(style_intermodal_4_0);
+            layer_stations_5.setStyle(style_stations_5_0);
+            layer_lp0807_9.setStyle(style_lp0807_9_0);
+        map.on("zoomend", function(){
+            newM2px();
+
+            layer_intermodal_4.setStyle(style_intermodal_4_0);
+            layer_stations_5.setStyle(style_stations_5_0);
+            layer_lp0807_9.setStyle(style_lp0807_9_0);
+        });
+        resetLabels([layer_texts_18]);
+        map.on("zoomend", function(){
+            resetLabels([layer_texts_18]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_texts_18]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_texts_18]);
+        });
+        </script>
+    </body>
+</html>
